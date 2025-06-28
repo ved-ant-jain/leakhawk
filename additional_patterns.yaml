@@ -24,12 +24,6 @@ patterns:
       description: "AUTH0 Client IDs for regular web applications"
       
   - pattern:
-      name: "GIA App Client ID"
-      regex: "(?i)base64_entropy_gia_app_client_id\\s*[=:]\\s*([A-Za-z0-9]{32})"
-      confidence: "high"
-      description: "GIA Application Client ID for authentication"
-      
-  - pattern:
       name: "Zoom Client Secret"
       regex: "(?i)base64_entropy_zoom_client_secret\\s*[=:]\\s*([A-Za-z0-9]{32})"
       confidence: "high"
