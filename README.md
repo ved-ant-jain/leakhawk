@@ -1,6 +1,6 @@
 <div align="center">
 
-![LeakHawk Logo](https://via.placeholder.com/200x100/2E86AB/FFFFFF?text=LeakHawk)
+![LeakHawk Logo](logo.png)
 
 **Runtime Secrets Detection for AWS Lambda and ECS environments**
 
