@@ -1,0 +1,42 @@
+patterns:
+  - pattern:
+      name: "Intercom Secret"
+      regex: "(?i)intercom_secret\\s*[=:]\\s*([A-Za-z0-9]{40})"
+      confidence: "high"
+      description: "Intercom API Secret used for authentication with Intercom services"
+      
+  - pattern:
+      name: "OpenAI API Key"
+      regex: "sk-[A-Za-z0-9]{48}"
+      confidence: "critical"
+      description: "OpenAI API Key used for accessing OpenAI services like GPT models"
+      
+  - pattern:
+      name: "RuleSearchString"
+      regex: "(?i)rulesearchstring_found_in_code\\s*[=:]\\s*([A-Za-z0-9]{30})"
+      confidence: "medium"
+      description: "Rule search string used for code analysis"
+      
+  - pattern:
+      name: "AUTH0 Regular Web App Client IDs"
+      regex: "(?i)base64_entropy_auth0_regular_web_app_client_ids\\s*[=:]\\s*([A-Za-z0-9]{32})"
+      confidence: "high"
+      description: "AUTH0 Client IDs for regular web applications"
+      
+  - pattern:
+      name: "GIA App Client ID"
+      regex: "(?i)base64_entropy_gia_app_client_id\\s*[=:]\\s*([A-Za-z0-9]{32})"
+      confidence: "high"
+      description: "GIA Application Client ID for authentication"
+      
+  - pattern:
+      name: "Zoom Client Secret"
+      regex: "(?i)base64_entropy_zoom_client_secret\\s*[=:]\\s*([A-Za-z0-9]{32})"
+      confidence: "high"
+      description: "Zoom Client Secret used for Zoom API integration"
+      
+  - pattern:
+      name: "Databricks Authentication Token"
+      regex: "dapi[0-9a-f]{40}"
+      confidence: "critical"
+      description: "Databricks Authentication Token used for accessing Databricks services"

@@ -1,0 +1,144 @@
+patterns:
+  - pattern:
+      name: "New Relic APM License Key"
+      regex: "NRAK-[A-Z0-9]{24}"
+      confidence: "high"
+      description: "New Relic APM License Key used for application monitoring"
+      
+  - pattern:
+      name: "AWS Access Key ID"
+      regex: "(A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}"
+      confidence: "critical"
+      description: "AWS Access Key ID used for programmatic access to AWS services"
+      
+  - pattern:
+      name: "AWS Secret Access Key"
+      regex: "[0-9a-zA-Z/+]{40}"
+      confidence: "critical"
+      description: "AWS Secret Access Key used with Access Key ID for AWS authentication"
+      
+  - pattern:
+      name: "GitHub Personal Access Token"
+      regex: "ghp_[0-9a-zA-Z]{36}"
+      confidence: "critical"
+      description: "GitHub Personal Access Token used for API authentication"
+      
+  - pattern:
+      name: "GitHub OAuth Access Token"
+      regex: "gho_[0-9a-zA-Z]{36}"
+      confidence: "critical"
+      description: "GitHub OAuth Access Token used for OAuth app authentication"
+      
+  - pattern:
+      name: "GitHub App Token"
+      regex: "(ghu|ghs)_[0-9a-zA-Z]{36}"
+      confidence: "critical"
+      description: "GitHub App installation access token"
+      
+  - pattern:
+      name: "Stripe API Key"
+      regex: "(sk|pk)_(test|live)_[0-9a-zA-Z]{24}"
+      confidence: "critical"
+      description: "Stripe API Key used for payment processing"
+      
+  - pattern:
+      name: "Slack Token"
+      regex: "xox[baprs]-([0-9a-zA-Z]{10,48})?"
+      confidence: "high"
+      description: "Slack API Token used for bot or app integration"
+      
+  - pattern:
+      name: "Slack Webhook"
+      regex: "https://hooks.slack.com/services/T[a-zA-Z0-9_]{8}/B[a-zA-Z0-9_]{8,12}/[a-zA-Z0-9_]{24}"
+      confidence: "high"
+      description: "Slack Incoming Webhook URL for posting messages to channels"
+      
+  - pattern:
+      name: "Google API Key"
+      regex: "AIza[0-9A-Za-z\\-_]{35}"
+      confidence: "high"
+      description: "Google API Key used for accessing Google services"
+      
+  - pattern:
+      name: "Heroku API Key"
+      regex: "[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}"
+      confidence: "high"
+      description: "Heroku API Key used for Heroku CLI and API access"
+      
+  - pattern:
+      name: "Twilio API Key"
+      regex: "SK[0-9a-fA-F]{32}"
+      confidence: "high"
+      description: "Twilio API Key used for Twilio services"
+      
+  - pattern:
+      name: "SendGrid API Key"
+      regex: "SG\\.[0-9A-Za-z\\-_]{22}\\.[0-9A-Za-z\\-_]{43}"
+      confidence: "high"
+      description: "SendGrid API Key used for email services"
+      
+  - pattern:
+      name: "MongoDB Connection String"
+      regex: "mongodb(\\+srv)?://[^/\\s]+(:\\d+)?/\\w+"
+      confidence: "high"
+      description: "MongoDB Connection String for database access"
+      
+  - pattern:
+      name: "JWT Token"
+      regex: "eyJ[A-Za-z0-9-_=]+\\.[A-Za-z0-9-_=]+\\.?[A-Za-z0-9-_.+/=]*"
+      confidence: "medium"
+      description: "JSON Web Token used for authentication"
+      
+  - pattern:
+      name: "Private Key"
+      regex: "-----BEGIN (RSA|DSA|EC|PGP|OPENSSH) PRIVATE KEY( BLOCK)?-----"
+      confidence: "critical"
+      description: "Private key in PEM format"
+      
+  - pattern:
+      name: "Docker Registry Auth"
+      regex: "https?://([^/]+\\.)?docker\\.com/.*token=\\w+"
+      confidence: "high"
+      description: "Docker Registry authentication token"
+      
+  - pattern:
+      name: "NPM Token"
+      regex: "npm_[A-Za-z0-9]{36}"
+      confidence: "high"
+      description: "NPM authentication token"
+      
+  - pattern:
+      name: "Mailgun API Key"
+      regex: "key-[0-9a-zA-Z]{32}"
+      confidence: "high"
+      description: "Mailgun API Key for email services"
+      
+  - pattern:
+      name: "PayPal Braintree Access Token"
+      regex: "access_token\\$production\\$[0-9a-z]{16}\\$[0-9a-f]{32}"
+      confidence: "critical"
+      description: "PayPal Braintree Access Token for payment processing"
+      
+  - pattern:
+      name: "Square Access Token"
+      regex: "sq0atp-[0-9A-Za-z\\-_]{22}"
+      confidence: "critical"
+      description: "Square Access Token for payment processing"
+      
+  - pattern:
+      name: "Square OAuth Secret"
+      regex: "sq0csp-[0-9A-Za-z\\-_]{43}"
+      confidence: "critical"
+      description: "Square OAuth Secret for payment processing"
+      
+  - pattern:
+      name: "Telegram Bot API Token"
+      regex: "[0-9]{9}:[a-zA-Z0-9_-]{35}"
+      confidence: "high"
+      description: "Telegram Bot API Token for bot integration"
+      
+  - pattern:
+      name: "Firebase Database URL"
+      regex: "https://[a-z0-9-]+\\.firebaseio\\.com"
+      confidence: "medium"
+      description: "Firebase Realtime Database URL"
