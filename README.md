@@ -18,9 +18,9 @@ LeakHawk is a Python-based tool that helps developers detect and protect against
 
 ## Installation
 
-\`\`\`bash
+```sh
 pip install leakhawk
-\`\`\`
+```
 
 ## Usage
 
@@ -28,85 +28,85 @@ pip install leakhawk
 
 Set up your Slack webhook for notifications:
 
-\`\`\`bash
+```sh
 leakhawk config --set-slack-webhook https://hooks.slack.com/services/YOUR/WEBHOOK/URL
-\`\`\`
+```
 
 ### Scanning for Secrets
 
 Scan Lambda functions in a specific region:
 
-\`\`\`bash
+```sh
 leakhawk scan --access-key YOUR_ACCESS_KEY --secret-key YOUR_SECRET_KEY --region us-east-1 --lambda
-\`\`\`
+```
 
 Scan ECS tasks:
 
-\`\`\`bash
+```sh
 leakhawk scan --access-key YOUR_ACCESS_KEY --secret-key YOUR_SECRET_KEY --region us-east-1 --ecs
-\`\`\`
+```
 
 You can also use environment variables for AWS credentials:
 
-\`\`\`bash
+```sh
 export AWS_ACCESS_KEY_ID=YOUR_ACCESS_KEY
 export AWS_SECRET_ACCESS_KEY=YOUR_SECRET_KEY
 leakhawk scan --region us-east-1
-\`\`\`
+```
 
 ### Deploying Runtime Protection
 
 Protect a Lambda function:
 
-\`\`\`bash
+```sh
 leakhawk protect --resource-type lambda --resource-id my-function-name --slack-webhook https://hooks.slack.com/services/YOUR/WEBHOOK/URL
-\`\`\`
+```
 
 Protect an ECS task:
 
-\`\`\`bash
+```sh
 leakhawk protect --resource-type ecs --resource-id my-task-definition-arn --slack-webhook https://hooks.slack.com/services/YOUR/WEBHOOK/URL
-\`\`\`
+```
 
 ### Managing Custom Regex Patterns
 
 Add a custom regex pattern:
 
-\`\`\`bash
+```sh
 leakhawk pattern add --pattern "my_company_secret_.*" --name "Company Secret" --severity critical
-\`\`\`
+```
 
 List all custom patterns:
 
-\`\`\`bash
+```sh
 leakhawk pattern list
-\`\`\`
+```
 
 Remove a custom pattern:
 
-\`\`\`bash
+```sh
 leakhawk pattern remove --pattern "my_company_secret_.*"
-\`\`\`
+```
 
 Import patterns from a YAML file:
 
-\`\`\`bash
+```sh
 leakhawk pattern import --file patterns.yaml
-\`\`\`
+```
 
 Export patterns to a YAML file:
 
-\`\`\`bash
+```sh
 leakhawk pattern export --file my_patterns.yaml
-\`\`\`
+```
 
 ### Importing Predefined Patterns
 
 LeakHawk comes with a script to import predefined patterns:
 
-\`\`\`bash
+```sh
 python import_patterns.py patterns.yaml
-\`\`\`
+```
 
 ## How It Works
 
@@ -129,9 +129,9 @@ LeakHawk allows you to define your own regex patterns for detecting organization
 
 For example, if your organization uses a specific naming convention for API keys like `MYCOMPANY_API_KEY_*`, you can add a custom pattern to detect these:
 
-\`\`\`bash
+```bash
 leakhawk pattern add --pattern "mycompany_api_key_.*" --name "MyCompany API Key" --severity critical
-\`\`\`
+```
 
 ## License
 
